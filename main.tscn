@@ -1,27 +1,31 @@
 [gd_scene load_steps=2 format=3 uid="uid://b86dsc33vfjq7"]
 
-[ext_resource type="Script" path="res://Region.gd" id="1_ym5at"]
+[ext_resource type="PackedScene" uid="uid://3c4jmh1evowq" path="res://province.tscn" id="1_7xi1l"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Province" type="Polygon2D" parent="."]
-position = Vector2(463, 394)
-color = Color(0.960784, 0.619608, 0.690196, 1)
-offset = Vector2(-459, -255)
-polygon = PackedVector2Array(60, 52, 19, 154, 47, 355, 156, 468, 478, 429, 573, 192, 447, 88, 245, 96, 223, 23, 142, 13)
-script = ExtResource("1_ym5at")
+[node name="Province" parent="." instance=ExtResource("1_7xi1l")]
 
-[node name="Area2D" type="Area2D" parent="Province"]
-position = Vector2(-179, 7)
+[node name="Area2D" parent="Province" index="0"]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Province/Area2D"]
-position = Vector2(-280, -262)
-polygon = PackedVector2Array(60, 52, 19, 154, 47, 355, 156, 468, 478, 429, 573, 192, 447, 88, 245, 96, 223, 23, 142, 13)
+[node name="Province2" parent="." instance=ExtResource("1_7xi1l")]
+position = Vector2(995, 228)
+color = Color(0.52549, 0.807843, 0.631373, 1)
+polygon = PackedVector2Array(-112, 59, -309, 187, -287, 261, -85, 253, 41, 357, 250, 382, 505, 334, 528, 111, 408, 17, 144, 15)
 
-[node name="Label" type="Label" parent="Province"]
-offset_left = -199.0
-offset_top = -3.0
-offset_right = -159.0
-offset_bottom = 20.0
-size_flags_horizontal = 0
-text = "San Verdad"
+[node name="Area2D" parent="Province2" index="0"]
+visible = false
+
+[node name="CollisionPolygon2D" parent="Province2/Area2D" index="0"]
+polygon = PackedVector2Array(-112, 59, -309, 187, -287, 261, -85, 253, 41, 357, 250, 382, 505, 334, 528, 111, 408, 17, 144, 15)
+
+[node name="Label" parent="Province2" index="1"]
+offset_left = -299.0
+offset_top = -97.0
+offset_right = -211.0
+offset_bottom = -74.0
+text = "Marino"
+
+[editable path="Province"]
+[editable path="Province2"]
