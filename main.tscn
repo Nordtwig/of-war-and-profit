@@ -4,10 +4,29 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="Ocean" type="Polygon2D" parent="."]
+color = Color(0.211765, 0.47451, 0.670588, 1)
+polygon = PackedVector2Array(-202, -227, -199, -118, -183, 756, 1347, 777, 1388, -131, 187, -230)
+
 [node name="Province" parent="." instance=ExtResource("1_7xi1l")]
 
 [node name="Area2D" parent="Province" index="0"]
 visible = false
+
+[node name="Province3" parent="." instance=ExtResource("1_7xi1l")]
+position = Vector2(976, 585)
+color = Color(0.137255, 0.282353, 0.384314, 1)
+polygon = PackedVector2Array(-34, 238, -23, 292, 54, 359, 247, 401, 490, 342, 431, 219, 447, 88, 525, -24, 269, 26, 60, 0)
+
+[node name="Area2D" parent="Province3" index="0"]
+visible = false
+
+[node name="Label" parent="Province3" index="1"]
+offset_left = -280.0
+offset_top = -78.0
+offset_right = -192.0
+offset_bottom = -55.0
+text = "Llalaster"
 
 [node name="Province2" parent="." instance=ExtResource("1_7xi1l")]
 position = Vector2(995, 228)
@@ -28,4 +47,5 @@ offset_bottom = -74.0
 text = "Marino"
 
 [editable path="Province"]
+[editable path="Province3"]
 [editable path="Province2"]
