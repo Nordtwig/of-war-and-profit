@@ -6,7 +6,7 @@
 
 [node name="Ocean" type="Polygon2D" parent="."]
 color = Color(0.211765, 0.47451, 0.670588, 1)
-polygon = PackedVector2Array(-202, -227, -199, -118, -183, 756, 1347, 777, 1388, -131, 187, -230)
+polygon = PackedVector2Array(-697, -236, -706, 25, -629, 1087, 1786, 1208, 1865, -528, -221, -528)
 
 [node name="Province" parent="." instance=ExtResource("1_7xi1l")]
 
