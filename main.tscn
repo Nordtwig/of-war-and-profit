@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b86dsc33vfjq7"]
+[gd_scene load_steps=3 format=3 uid="uid://b86dsc33vfjq7"]
 
 [ext_resource type="PackedScene" uid="uid://3c4jmh1evowq" path="res://province.tscn" id="1_7xi1l"]
+[ext_resource type="Texture2D" uid="uid://wo2yklyeyt7c" path="res://icon.svg" id="2_iehi4"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Ocean" type="Polygon2D" parent="."]
 color = Color(0.211765, 0.47451, 0.670588, 1)
-polygon = PackedVector2Array(-697, -236, -706, 25, -629, 1087, 1786, 1208, 1865, -528, -221, -528)
+polygon = PackedVector2Array(-1380, -311, -1723, 242, -1469, 1566, 2671, 1747, 2690, -1000, -827, -1006)
 
 [node name="Province" parent="." instance=ExtResource("1_7xi1l")]
 
@@ -45,6 +46,11 @@ offset_top = -97.0
 offset_right = -211.0
 offset_bottom = -74.0
 text = "Marino"
+
+[node name="Agent" type="Sprite2D" parent="."]
+position = Vector2(434, 334)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_iehi4")
 
 [editable path="Province"]
 [editable path="Province3"]
