@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b86dsc33vfjq7"]
+[gd_scene load_steps=4 format=3 uid="uid://b86dsc33vfjq7"]
 
 [ext_resource type="PackedScene" uid="uid://3c4jmh1evowq" path="res://province.tscn" id="1_7xi1l"]
 [ext_resource type="Texture2D" uid="uid://wo2yklyeyt7c" path="res://icon.svg" id="2_iehi4"]
+[ext_resource type="Script" path="res://Agent.gd" id="3_yoi50"]
 
 [node name="Main" type="Node2D"]
 
@@ -49,6 +50,12 @@ text = "Marino"
 
 [node name="Agent" type="Sprite2D" parent="."]
 position = Vector2(434, 334)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_iehi4")
+script = ExtResource("3_yoi50")
+
+[node name="Agent2" type="Sprite2D" parent="."]
+position = Vector2(889, 131)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_iehi4")
 
