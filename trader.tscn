@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://vowx7thgtu85"]
+
+[ext_resource type="Texture2D" uid="uid://dxk42fn1abes5" path="res://test_trader.png" id="1_48kvg"]
+
+[node name="Trader" type="Node2D"]
+position = Vector2(552, 390)
+scale = Vector2(0.0299023, 0.0299023)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 1
+polygon = PackedVector2Array(-635.402, -33.4424, -568.518, 267.538, -100.326, 434.749, 367.865, 367.864, 702.289, 267.537, 902.941, -0.000976563, 535.076, -234.097, 401.309, -1036.71, -66.8848, -1036.71, -535.076, -936.385, -769.172, -535.077)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+z_index = 1
+position = Vector2(68.123, 167.212)
+scale = Vector2(0.74074, 1)
+color = Color(0.839216, 0.286275, 0.286275, 1)
+polygon = PackedVector2Array(-137.115, -300.981, 133.768, -334.424, 66.8848, -1003.27, -300.98, -969.826, -678.881, -769.173)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+z_index = 1
+position = Vector2(367.865, 936.384)
+scale = Vector2(0.74074, 1)
+color = Color(0.839216, 0.286275, 0.286275, 1)
+polygon = PackedVector2Array(-316.029, -702.288, -45.1465, -836.058, -180.588, -1003.27, -496.617, -969.826, -632.059, -769.173)
+
+[node name="TestTrader" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(869.5, 0.000976563)
+texture = ExtResource("1_48kvg")
