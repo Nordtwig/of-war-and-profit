@@ -1,64 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://b86dsc33vfjq7"]
+[gd_scene load_steps=7 format=3 uid="uid://b86dsc33vfjq7"]
 
 [ext_resource type="PackedScene" uid="uid://3c4jmh1evowq" path="res://province.tscn" id="1_7xi1l"]
+[ext_resource type="Script" path="res://main.gd" id="1_88yec"]
 [ext_resource type="Texture2D" uid="uid://wo2yklyeyt7c" path="res://icon.svg" id="2_iehi4"]
+[ext_resource type="Texture2D" uid="uid://dt0mexgrk3xxh" path="res://yugos.jpg" id="2_lb2tx"]
 [ext_resource type="Script" path="res://Agent.gd" id="3_yoi50"]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_a0wxu"]
+font_size = 25
 
-[node name="Ocean" type="Polygon2D" parent="."]
-color = Color(0.211765, 0.47451, 0.670588, 1)
-polygon = PackedVector2Array(-1380, -311, -1723, 242, -1469, 1566, 2671, 1747, 2690, -1000, -827, -1006)
+[node name="Main" type="Node2D"]
+script = ExtResource("1_88yec")
+
+[node name="Yugos" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.568627)
+position = Vector2(572, 283)
+scale = Vector2(1.31964, 1.31964)
+texture = ExtResource("2_lb2tx")
 
 [node name="Province" parent="." instance=ExtResource("1_7xi1l")]
+position = Vector2(998, 382)
+color = Color(0.960784, 0.619608, 0.690196, 0.588235)
+polygon = PackedVector2Array(-218, -7, -320, 11, -112, 113, -107, 118, -90, 135, -76, 146, -61, 156, -61, 146, -58, 142, -53, 141, -52, 135, -44, 137, -45, 125, 52, 14, 33, -19, -13, -28, -50, -21, -59, -31, -129, -39, -158, -15, -191, -18)
 
 [node name="Area2D" parent="Province" index="0"]
 visible = false
 
-[node name="Province3" parent="." instance=ExtResource("1_7xi1l")]
-position = Vector2(976, 585)
-color = Color(0.137255, 0.282353, 0.384314, 1)
-polygon = PackedVector2Array(-34, 238, -23, 292, 54, 359, 247, 401, 490, 342, 431, 219, 447, 88, 525, -24, 269, 26, 60, 0)
+[node name="Label" parent="Province" index="1"]
+offset_left = -574.0
+offset_top = -148.0
+offset_right = -471.0
+offset_bottom = -113.0
+text = "Bosnia..."
+label_settings = SubResource("LabelSettings_a0wxu")
+horizontal_alignment = 1
 
-[node name="Area2D" parent="Province3" index="0"]
-visible = false
-
-[node name="Label" parent="Province3" index="1"]
-offset_left = -280.0
-offset_top = -78.0
-offset_right = -192.0
-offset_bottom = -55.0
-text = "Llalaster"
-
-[node name="Province2" parent="." instance=ExtResource("1_7xi1l")]
-position = Vector2(995, 228)
-color = Color(0.52549, 0.807843, 0.631373, 1)
-polygon = PackedVector2Array(-112, 59, -309, 187, -287, 261, -85, 253, 41, 357, 250, 382, 505, 334, 528, 111, 408, 17, 144, 15)
-
-[node name="Area2D" parent="Province2" index="0"]
-visible = false
-
-[node name="CollisionPolygon2D" parent="Province2/Area2D" index="0"]
-polygon = PackedVector2Array(-112, 59, -309, 187, -287, 261, -85, 253, 41, 357, 250, 382, 505, 334, 528, 111, 408, 17, 144, 15)
-
-[node name="Label" parent="Province2" index="1"]
-offset_left = -299.0
-offset_top = -97.0
-offset_right = -211.0
-offset_bottom = -74.0
-text = "Marino"
-
-[node name="Agent" type="Sprite2D" parent="."]
-position = Vector2(434, 334)
+[node name="Cage" type="Sprite2D" parent="."]
+position = Vector2(165, 441)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_iehi4")
 script = ExtResource("3_yoi50")
 
 [node name="Agent2" type="Sprite2D" parent="."]
-position = Vector2(889, 131)
+position = Vector2(160, 235)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_iehi4")
 
+[node name="Agent3" type="Sprite2D" parent="."]
+position = Vector2(114, 328)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_iehi4")
+script = ExtResource("3_yoi50")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(572, 325)
+
 [editable path="Province"]
-[editable path="Province3"]
-[editable path="Province2"]
